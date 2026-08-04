@@ -43,7 +43,9 @@ $select_sth->execute();
 ?>
 <head>
   <title>前期課題</title>
-  </head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="kadai.css">
+</head>
 
 <!-- フォームのPOST先はこのファイル自身にする -->
 <form method="POST" action="./kadai.php" enctype="multipart/form-data">

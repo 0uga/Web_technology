@@ -1,0 +1,59 @@
+body{
+    margin:0;
+    padding:20px;
+    background:#f4f6f9;
+    font-family:sans-serif;
+}
+
+form{
+    max-width:800px;
+    margin:20px auto;
+    background:#fff;
+    padding:20px;
+    border-radius:10px;
+}
+
+textarea{
+    width:100%;
+    min-height:120px;
+    padding:10px;
+    box-sizing:border-box;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#2196f3;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1976d2;
+}
+
+dl{
+    max-width:800px;
+    margin:20px auto;
+    padding:20px;
+    background:white;
+    border-radius:10px;
+}
+
+img{
+    max-width:100%;
+    height:auto;
+}
+
+@media (max-width:600px){
+
+    body{
+        padding:10px;
+    }
+
+    form,
+    dl{
+        padding:15px;
+    }
