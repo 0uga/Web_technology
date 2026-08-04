@@ -20,7 +20,7 @@ ec2-userに権限を与えて反映させます
 sudo usermod -a -G docker ec2-user
 exit
 ```
-一度ログアウトして再ログインをしてもらいます
+一度ログアウトして再ログインをしてもらいます<br>
 
 
 docker composeをインストールします
@@ -43,7 +43,7 @@ curl -SL https://github.com/docker/buildx/releases/download/v0.17.1/buildx-v0.17
 chmod +x ~/.docker/cli-plugins/docker-buildx
 ```
 
-screen のインストール
+screen のインストールします
 ```bash
 sudo yum install screen -y
 ```
@@ -65,8 +65,8 @@ screen
 ```
 creen起動後の操作
 > [!TIP]
-> Ctrl+aの後にcで新規作成
-> Ctrl+aの後にnで次のウィンドウに移動
+> Ctrl+aの後にcで新規作成<br>
+> Ctrl+aの後にnで次のウィンドウに移動<br>
 > Ctrl+aの後にpで前のウィンドウに移動
 
 コンテナを起動します
