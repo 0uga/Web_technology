@@ -1,9 +1,9 @@
 # 手順書
 
-### 1. EC2インスタンスに接続
+## 1. EC2インスタンスに接続
 EC2インスタンスを起動し、SSHで接続します
 
-### 2. パッケージのインストールと設定
+## 2. パッケージのインストールと設定
 gitをインストールします
 ```bash
 sudo yum install git -y
@@ -48,7 +48,7 @@ screen のインストール
 sudo yum install screen -y
 ```
 
-### 3. リポジトリをクローン
+## 3. リポジトリをクローン
 GitHubからリポジトリをクローンします
 ```bash
 git clone https://github.com/0uga/zenki.git
@@ -58,7 +58,7 @@ git clone https://github.com/0uga/zenki.git
 cd zenki
 ```
 
-### 4. コンテナのビルドと起動
+## 4. コンテナのビルドと起動
 screenを起動します
 ```bash
 screen
@@ -94,7 +94,7 @@ CREATE TABLE `bbs_entries` (
 exit
 ```
 
-### 5. 動作確認
+## 5. 動作確認
 下記のURLにアクセスしてください
 ```text
 http://<EC2のパブリックIPアドレス>/kadai.php
