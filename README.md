@@ -26,7 +26,7 @@ sudo usermod -a -G docker ec2-user
 ```bash
 exit
 ```
-<br>
+
 docker composeをインストールします
 ```bash
 DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker}
