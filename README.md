@@ -47,6 +47,11 @@ curl -SL https://github.com/docker/buildx/releases/download/v0.17.1/buildx-v0.17
 chmod +x ~/.docker/cli-plugins/docker-buildx
 ```
 
+インストールできたかどうかの確認
+```bash
+docker buildx version
+```
+
 screen のインストールをします
 ```bash
 sudo yum install screen -y
