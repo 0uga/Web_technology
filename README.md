@@ -99,7 +99,7 @@ CREATE TABLE `bbs_entries` (
 ```
 
 テーブルの確認
-```bash
+```sql
 show tables;
 ```
 
