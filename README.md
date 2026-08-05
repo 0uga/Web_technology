@@ -18,11 +18,12 @@ sudo systemctl start docker
 ec2-userに権限を与えて反映させます
 ```bash
 sudo usermod -a -G docker ec2-user
+```
+一度ログアウトして再ログインをしてもらいます
+```bash
 exit
 ```
-一度ログアウトして再ログインをしてもらいます<br>
-
-
+<br>
 docker composeをインストールします
 ```bash
 DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker}
@@ -63,7 +64,7 @@ screenを起動します
 ```bash
 screen
 ```
-creen起動後の操作
+screen起動後の操作
 > [!TIP]
 > Ctrl+aの後にcで新規作成<br>
 > Ctrl+aの後にnで次のウィンドウに移動<br>
@@ -89,7 +90,7 @@ CREATE TABLE `bbs_entries` (
 );
 ```
 
-テーブルの作成が完了したら、MySQLから切断します。
+テーブルの作成が完了したら、mysqlから切断します。
 ```sql
 exit
 ```
