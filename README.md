@@ -98,6 +98,11 @@ CREATE TABLE `bbs_entries` (
 );
 ```
 
+テーブルの確認
+```bash
+show tables;
+```
+
 テーブルの作成が完了したら、mysqlから切断します。
 ```sql
 exit
