@@ -1,25 +1,8 @@
 FROM php:8.4-fpm-alpine AS php
 
-RUN apk add -U --no-cache curl-dev
-RUN docker-php-ext-install curl
-RUN docker-php-ext-install exif 
-
-RUN apk add --no-cache $PHPIZE_DEPS
-RUN pecl install apcu \
-    && docker-php-ext-enable apcu
-
-
-RUN apk add --no-cache \
-    freetype-dev \
-    libjpeg-turbo-dev \
-    libpng-dev
-
-RUN docker-php-ext-configure gd \
-    --with-freetype \
-    --with-jpeg
-
-RUN docker-php-ext-install gd
-
+RUN apk add --no-cache autoconf build-base \
+    && yes '' | pecl install redis \
+    && docker-php-ext-enable redis
 
 RUN docker-php-ext-install pdo_mysql
 
