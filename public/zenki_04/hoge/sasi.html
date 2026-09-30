@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cafe Aurora</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #fff8f0;
+      color: #333;
+    }
+
+    header {
+      background-color: #6b4f3f;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    nav {
+      background-color: #8b6b58;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    footer {
+      background-color: #6b4f3f;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    button {
+      background-color: #6b4f3f;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #543c30;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Cafe Aurora</h1>
+    <p>落ち着いた空間で特別なコーヒーを。</p>
+  </header>
+
+  <nav>
+    <a href="#about">お店について</a>
+    <a href="#menu">メニュー</a>
+    <a href="#contact">お問い合わせ</a>
+  </nav>
+
+  <section id="about">
+    <h2>お店について</h2>
+    <p>
+      Cafe Auroraは、ゆったりとした時間を過ごせるカフェです。
+      香り高いコーヒーと手作りスイーツをお楽しみください。
+    </p>
+  </section>
+
+  <section id="menu">
+    <h2>人気メニュー</h2>
+
+    <div class="menu">
+      <div class="card">
+        <h3>カフェラテ</h3>
+        <p>¥500</p>
+      </div>
+
+      <div class="card">
+        <h3>チーズケーキ</h3>
+        <p>¥450</p>
+      </div>
+
+      <div class="card">
+        <h3>抹茶パフェ</h3>
+        <p>¥700</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>お問い合わせ</h2>
+    <p>お気軽にお問い合わせください。</p>
+    <button>お問い合わせする</button>
+  </section>
+
+  <footer>
+    <p>© 2026 Cafe Aurora</p>
+  </footer>
+
+</body>
+</html>
+

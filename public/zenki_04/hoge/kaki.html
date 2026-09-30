@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Simple Website</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #222;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background: #444;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      margin-bottom: 10px;
+      color: #222;
+    }
+
+    button {
+      background: #222;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    button:hover {
+      background: #555;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #222;
+      color: white;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>シンプルWebサイト</h1>
+    <p>HTML・CSS・JavaScriptの練習用サイト</p>
+  </header>
+
+  <nav>
+    <a href="#about">紹介</a>
+    <a href="#service">サービス</a>
+    <a href="#contact">連絡先</a>
+    <a href="http://98.85.223.95/hoge/sasi.html">カフェ</a>
+  </nav>
+
+  <div class="container">
+
+    <section class="card" id="about">
+      <h2>自己紹介</h2>
+      <p>
+        こんにちは！これは簡単なWebサイトのサンプルです。
+        HTMLとCSSを使って作成しています。
+      </p>
+    </section>
+
+    <section class="card" id="service">
+      <h2>できること</h2>
+      <ul>
+        <li>Webサイト制作</li>
+        <li>デザイン練習</li>
+        <li>プログラミング学習</li>
+      </ul>
+
+      <button onclick="showMessage()">クリック</button>
+    </section>
+
+    <section class="card" id="contact">
+      <h2>連絡先</h2>
+      <p>Email: sample@example.com</p>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>© 2026 Simple Website</p>
+  </footer>
+
+  <script>
+    function showMessage() {
+      alert('ボタンがクリックされました！');
+    }
+  </script>
+
+</body>
+</html>
+
