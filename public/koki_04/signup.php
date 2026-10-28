@@ -17,19 +17,31 @@ if (!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['password
     return;
   }
 
+  // 64文字のソルトを生成する
+  $salt = bin2hex(random_bytes(32));
+
+  // パスワードの後ろにソルトを連結してハッシュ化する
+  $hashed_password = hash('sha256', $_POST['password'] . $salt);
+
+  // ハッシュ値の後ろにソルトを連結する
+  $stored_password = $hashed_password . $salt;
+
   // insertする
   $insert_sth = $dbh->prepare("INSERT INTO users (name, email, password) VALUES (:name, :email, :password)");
+
   $insert_sth->execute([
     ':name' => $_POST['name'],
     ':email' => $_POST['email'],
-    ':password' =>hash('sha256', $_POST['password']),
+    ':password' => $stored_password,
   ]);
+
   // 処理が終わったら完了画面にリダイレクト
   header("HTTP/1.1 303 See Other");
   header("Location: ./signup_finish.php");
   return;
 }
 ?>
+
 <h1>会員登録</h1>
 <!-- 登録フォーム -->
 <form method="POST">

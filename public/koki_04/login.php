@@ -19,8 +19,21 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
     return;
   }
 
-  // パスワードが正しいかチェック
-  $correct_password = hash('sha256', $_POST['password']) === $user['password'];
+  // データベースに保存された文字列を取得する
+  $stored_password = $user['password']; 
+  
+  // 末尾64文字をソルトとして取り出す 
+  $salt = substr($stored_password, -64); 
+  
+  // 先頭64文字をハッシュ値として取り出す
+  $stored_hash = substr($stored_password, 0, 64);
+  
+  // 入力されたパスワードの後ろにソルトを連結してハッシュ化する 
+  $input_hash = hash('sha256', $_POST['password'] . $salt);
+
+  // 保存されたハッシュ値と比較する
+  $correct_password = hash_equals($stored_hash, $input_hash);
+  
   if (!$correct_password) {
     // パスワードが間違っていれば、処理を中断しエラー用クエリパラメータ付きのログイン画面URLにリダイレクト
     header("HTTP/1.1 303 See Other");
@@ -30,24 +43,31 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
 
 
   # ここからセッションの独自実装 (詳細は後期第2回授業参照) ##############
+  
   // セッションIDの取得(なければ新規で作成&設定)
   $session_cookie_name = 'session_id';
   $session_id = $_COOKIE[$session_cookie_name] ?? base64_encode(random_bytes(64));
+
   if (!isset($_COOKIE[$session_cookie_name])) {
     setcookie($session_cookie_name, $session_id);
   }
+
   // 接続 (redisコンテナの6379番ポートに接続)
   $redis = new Redis();
   $redis->connect('redis', 6379);
+
   // Redisにセッション変数を保存しておくキー
   $redis_session_key = "session-" . $session_id;
+
   // Redisからセッションのデータを読み込み
   // 既にセッション変数(の配列)が何かしら格納されていればそれを，なければ空の配列を $session_values変数に保存
   $session_values = $redis->exists($redis_session_key)
     ? json_decode($redis->get($redis_session_key), true)
     : [];
+
   // セッションにログインできた会員情報の主キー(id)を設定
   $session_values["login_user_id"] = $user['id'];
+
   // セッションをRedisに保存
   $redis->set($redis_session_key, json_encode($session_values));
   # セッションここまで ###################################################
