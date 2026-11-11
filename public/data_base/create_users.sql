@@ -9,3 +9,5 @@ CREATE TABLE `users` (
 ALTER TABLE `users` ADD COLUMN icon_filename TEXT DEFAULT NULL;
 
 ALTER TABLE users ADD COLUMN introduction TEXT NULL;
+
+ALTER TABLE users ADD COLUMN birthday DATE NULL;
