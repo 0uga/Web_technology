@@ -3,7 +3,10 @@ $user = null;
 if (!empty($_GET['user_id'])) {
   $user_id = $_GET['user_id'];
   // DBに接続
-  $dbh = new PDO('mysql:host=mysql;dbname=example_db', 'root', '');
+  $dbh = new PDO('mysql:host=mysql;dbname=example_db', 'root', '', [
+     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+  ]);
   // 対象の会員情報を引く
   $select_sth = $dbh->prepare("SELECT * FROM users WHERE id = :id");
   $select_sth->execute([
@@ -27,3 +30,13 @@ if (empty($user)) {
     style="height: 5em; width: 5em; border-radius: 50%; object-fit: cover;">
   <?php endif; ?>
 </div>
+
+<section>
+<h2>自己紹介</h2>
+<?php 
+  if (empty($user['introduction'])): ?>
+  <p>自己紹介文は未設定です。</p>
+  <?php else: ?>
+  <p><?= nl2br(htmlspecialchars($user['introduction'], ENT_QUOTES, 'UTF-8')) ?></p>
+  <?php endif; ?>
+</section>
