@@ -40,6 +40,8 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
 }
 ?>
 
+初めての人は<a href="/koki_07/signup.php">会員登録</a>しましょう。
+<hr>
 <h1>ログイン</h1>
 <!-- ログインフォーム -->
 <form method="POST">

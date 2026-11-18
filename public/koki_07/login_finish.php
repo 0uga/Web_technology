@@ -19,8 +19,9 @@ $user = $insert_sth->fetch();
 ?>
 
 <h1>ログイン完了</h1>
-<p>
-  ログイン完了しました!
+<p> 
+  ログイン完了しました!<br>
+  <a href="/koki_07/bbs.php">掲示板はこちら</a>
 </p>
 <hr>
 <p>
